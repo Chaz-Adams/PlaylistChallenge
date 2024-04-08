@@ -9,6 +9,16 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection){
-        return null;
+        Integer n = playList.length;
+        Integer forward = (-1 - startIndex + n) % n;
+        Integer backward = (startIndex + 1 + n) % n;
+
+        if (forward > backward) {
+            return forward;
+        }
+        else {
+            return backward;
+        }
     }
+
 }
